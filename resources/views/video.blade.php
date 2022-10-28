@@ -4,12 +4,18 @@
     
 @section('content')
 
-<h1>{{substr($video,7,-4)}} - <a href="/">Deletar</a></h1>
+<h1>{{substr($video,7,-4)}} - 
+  <form action="{{route('chupado', substr($video,7,-4))}}" method="POST">
+  @csrf
+  @method('DELETE')
+  <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+  </form>
+</h1>
 
-<video width="940" height="620" controls autoplay>
+  <video width="940" height="620" controls autoplay>
     <source src="{{'http://127.0.0.1:8000/'. $video}}" type="video/mp4">
     Your browser does not support the video tag.
-</video>
+  </video>
 
 
 <form action="POST">

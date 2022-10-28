@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 
 
 
@@ -18,9 +19,10 @@ class VideosController extends Controller
     }
     
     public function video($codigodovideo) {
+
         $directory = "videos";
         $video = glob($directory . "/*$codigodovideo*")[0];
-        dd($video);
+        // dd($video);
         return  view('video', ['video' => $video]);
     } 
     
@@ -53,10 +55,16 @@ class VideosController extends Controller
         }                
     }
 
-    public function delete() {
+    public function destroy($codigodovideo) {
 
-        // $video;
-        // Storage::delete(['file.jpg', 'file2.jpg']);
+        // Event::findOrFail($codigodovideo)->delete();        
+        $videoDel = glob("videos/$codigodovideo.mp4")[0];
+        $imgDel = glob("img/thumbnail/$codigodovideo.jpg")[0];
+        // $this->video($videoDel);
+        Storage::disk('public_uploads')->delete($videoDel);
+        Storage::disk('public_uploads')->delete($imgDel);
+
+        return redirect()->route('lambi');
 
     }
 }
