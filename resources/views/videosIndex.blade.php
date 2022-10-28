@@ -10,7 +10,7 @@
 
 <a  href="{{route('chupei', substr($image,14,-4))}}">
     <img src="{{$image}}" alt="">
-    <p>{{substr($image,14,-4)}}</p>
+    <p>{{substr($image,14,-4)}} </p>
 </a>
     
 @endforeach

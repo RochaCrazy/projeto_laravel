@@ -8,10 +8,12 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "lakshmaji/thumbnail": "^1.4",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "pawlox/video-thumbnail": "^3.0"
+        "pawlox/video-thumbnail": "^3.0",
+        "php-ffmpeg/php-ffmpeg": "^0.19.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

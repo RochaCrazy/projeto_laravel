@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Pawlox\VideoThumbnail\VideoThumbnailServiceProvider::class,
+        Lakshmaji\Thumbnail\ThumbnailServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -220,6 +221,7 @@ return [
         'RateLimiter' => Illuminate\Support\Facades\RateLimiter::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'VideoThumbnail' => Pawlox\VideoThumbnail\Facade\VideoThumbnail::class,
+        'Thumbnail' => Lakshmaji\Thumbnail\Facade\Thumbnail::class,
         // 'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
         'Response' => Illuminate\Support\Facades\Response::class,

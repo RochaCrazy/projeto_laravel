@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9f5ae4a0a49e179b010cb58fdd4c284",
+    "content-hash": "a85ea7b713152dbda2191be692bed5e7",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -961,16 +961,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.4.1",
+            "version": "2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "69568e4293f4fa993f3b0e51c9723e1e17c41379"
+                "reference": "67c26b443f348a51926030c83481b85718457d3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/69568e4293f4fa993f3b0e51c9723e1e17c41379",
-                "reference": "69568e4293f4fa993f3b0e51c9723e1e17c41379",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/67c26b443f348a51926030c83481b85718457d3d",
+                "reference": "67c26b443f348a51926030c83481b85718457d3d",
                 "shasum": ""
             },
             "require": {
@@ -1060,7 +1060,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.4.1"
+                "source": "https://github.com/guzzle/psr7/tree/2.4.3"
             },
             "funding": [
                 {
@@ -1076,7 +1076,55 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T14:45:39+00:00"
+            "time": "2022-10-26T14:07:24+00:00"
+        },
+        {
+            "name": "lakshmaji/thumbnail",
+            "version": "1.4.51",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lakshmaji/Thumbnail.git",
+                "reference": "7557e7042c4cb66380dae1ab7416f7af024507e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lakshmaji/Thumbnail/zipball/7557e7042c4cb66380dae1ab7416f7af024507e9",
+                "reference": "7557e7042c4cb66380dae1ab7416f7af024507e9",
+                "shasum": ""
+            },
+            "require": {
+                "php-ffmpeg/php-ffmpeg": "~0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lakshmaji\\Thumbnail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lakshmaji"
+                }
+            ],
+            "description": "Thumbnails for videos",
+            "keywords": [
+                "Thumbnails",
+                "composer",
+                "ffmpeg",
+                "laravel",
+                "screenshot",
+                "thumbnail",
+                "video"
+            ],
+            "support": {
+                "issues": "https://github.com/lakshmaji/Thumbnail/issues",
+                "source": "https://github.com/lakshmaji/Thumbnail/tree/1.4.51"
+            },
+            "time": "2017-10-19T03:36:30+00:00"
         },
         {
             "name": "laravel/framework",

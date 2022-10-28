@@ -36,7 +36,9 @@ Route::post('/video/store/', [VideosController::class, 'store'])->name('mamei');
 
 Route::get('/video/upload/', [VideosController::class, 'upload'])->name('mamado');
 
-Route::get('/video/{codigodovideo}', [VideosController::class, 'video'])->name('chupei');
+Route::get('/video/{codigodovideo}/', [VideosController::class, 'video'])->name('chupei');
+
+Route::delete('/video/{codigodovideo}/delete', [VideosController::class, 'delete'])->name('chupado');
 
 
 
