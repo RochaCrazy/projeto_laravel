@@ -58,13 +58,20 @@ class VideosController extends Controller
     public function destroy($codigodovideo) {
 
         // Event::findOrFail($codigodovideo)->delete();        
-        $videoDel = glob("videos/$codigodovideo.mp4")[0];
-        $imgDel = glob("img/thumbnail/$codigodovideo.jpg")[0];
+        $videoDel = glob("videos/$codigodovideo.mp4");
+        $imgDel = glob("img/thumbnail/$codigodovideo.jpg");
         // $this->video($videoDel);
         Storage::disk('public_uploads')->delete($videoDel);
         Storage::disk('public_uploads')->delete($imgDel);
 
         return redirect()->route('lambi');
+
+    }
+
+    public function edit($codigodovideo) {
+
+        $imgEdit = glob("img/thumbnail/$codigodovideo.jpg");
+        Storage::move($imgEdit, 'new/file.jpg');
 
     }
 }

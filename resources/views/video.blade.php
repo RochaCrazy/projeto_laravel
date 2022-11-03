@@ -4,7 +4,7 @@
     
 @section('content')
 
-<h1>{{substr($video,7,-4)}} - 
+<h1>{{substr($video,7,-4)}}
   <form action="{{route('chupado', substr($video,7,-4))}}" method="POST">
   @csrf
   @method('DELETE')

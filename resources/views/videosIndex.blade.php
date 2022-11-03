@@ -9,8 +9,14 @@
 @foreach($images as $image)
 
 <a  href="{{route('chupei', substr($image,14,-4))}}">
-    <img src="{{$image}}" alt="">
-    <p>{{substr($image,14,-4)}}</p>
+    <img width="500" height="350" src="{{$image}}" alt="">
+    <p>{{substr($image,14,-4)}}
+        <form action="{{route('chupado', substr($image,14,-4))}}" method="POST">
+        @csrf
+        @method('DELETE')
+            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+        </form>
+    </p>
 </a>
     
 @endforeach
