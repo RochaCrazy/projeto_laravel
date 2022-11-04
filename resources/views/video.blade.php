@@ -8,7 +8,12 @@
   <form action="{{route('chupado', substr($video,7,-4))}}" method="POST">
   @csrf
   @method('DELETE')
-  <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{{route('lambido', substr($video,7,-4))}}">
+      <button type="button" class="btn btn-warning">Edit</button> 
+    </a>   
+  </div>  
   </form>
 </h1>
 

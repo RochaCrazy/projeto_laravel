@@ -20,9 +20,9 @@ class VideosController extends Controller
     
     public function video($codigodovideo) {
 
+        // dd($codigodovideo);
         $directory = "videos";
         $video = glob($directory . "/*$codigodovideo*")[0];
-        // dd($video);
         return  view('video', ['video' => $video]);
     } 
     
@@ -59,7 +59,7 @@ class VideosController extends Controller
 
         // Event::findOrFail($codigodovideo)->delete();        
         $videoDel = glob("videos/$codigodovideo.mp4");
-        $imgDel = glob("img/thumbnail/$codigodovideo.jpg");
+         $imgDel= glob("img/thumbnail/$codigodovideo.jpg");
         // $this->video($videoDel);
         Storage::disk('public_uploads')->delete($videoDel);
         Storage::disk('public_uploads')->delete($imgDel);
@@ -68,10 +68,40 @@ class VideosController extends Controller
 
     }
 
-    public function edit($codigodovideo) {
+    public function edit($codigodovideo) { 
 
-        $imgEdit = glob("img/thumbnail/$codigodovideo.jpg");
-        Storage::move($imgEdit, 'new/file.jpg');
+        $oldImg = glob("img/thumbnail/$codigodovideo.jpg")[0];
+
+        return view('edit', ['codigodovideo' => $codigodovideo, 'oldImg' => $oldImg]);
 
     }
-}
+
+    public function update(Request $request, $codigodovideo) {
+        // dd($codigodovideo);
+
+        if ($request->has('nomeVideo') AND $request->hasFile('fileImg')) {
+            
+            $fileImg = $request->file('fileImg');
+            
+            $nomeVideo = $request->get('nomeVideo');
+                        
+            $extensionImg = $request->fileImg->extension();
+            
+            $imgDel= glob("img/thumbnail/$codigodovideo.jpg");
+            $videoDel = glob("videos/$codigodovideo.mp4")[0];
+            // dd($videoDel);                     
+            
+            $request->fileImg->storeAs('img/thumbnail', $nomeVideo . '.jpg', ['disk' => 'public_uploads']);
+            Storage::disk('public_uploads')->delete($imgDel);     
+            Storage::disk('public_uploads')->move($videoDel, 'videos/'. $nomeVideo . '.mp4');    
+            
+            
+            return redirect()->route('lambi');
+            
+        } else { 
+            echo "se fudeu";            
+        }                
+
+        }
+
+    }

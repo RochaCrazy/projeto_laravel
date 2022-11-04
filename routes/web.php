@@ -40,7 +40,9 @@ Route::get('/video/{codigodovideo}/', [VideosController::class, 'video'])->name(
 
 Route::delete('/video/{codigodovideo}/', [VideosController::class, 'destroy'])->name('chupado');
 
-Route::post('/video/{codigodovideo}/', [VideosController::class, 'edit'])->name('lambido');
+Route::get('/video/{codigodovideo}/editar/', [VideosController::class, 'edit'])->name('lambido');
+
+Route::post('/video/{codigodovideo}/update/', [VideosController::class, 'update'])->name('mordi');
 
 
 
